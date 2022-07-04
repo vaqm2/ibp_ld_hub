@@ -25,10 +25,11 @@ ggplot(rG_table, aes(x = rg, y = p2, color = Significant)) +
     geom_point() + 
     geom_errorbarh(aes(xmin = rg - 1.96 * se, xmax = rg + 1.96 * se), 
                    height = 0.01) +
-    geom_label(aes(label = p_fdr)) +
+    geom_text(aes(label = p_fdr)) +
     geom_vline(xintercept = 0, lty = 2) +
     theme_bw() +
-    scale_color_manual(values = c("red", "blue")) +
-    labs(caption = out_prefix)
+    scale_color_manual(values = c("blue", "red")) +
+    labs(caption = out_prefix) +
+    ylab("")
 
 dev.off()
