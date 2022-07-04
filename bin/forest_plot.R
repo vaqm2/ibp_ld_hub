@@ -11,6 +11,9 @@ rG_table = rG_table %>%
     select(p1, p2, rg, rg_low, rg_high, p) %>% 
     mutate(p_fdr = p.adjust(p, method = c("fdr"), n = nrow(rG_table))) %>%
     mutate(Significant = ifelse(p_fdr < 0.05, "Yes", "No"))
+
+rG_table$p1 = gsub(".*$", "", rG_table$p1)
+rG_table$p2 = gsub(".*$", "", rG_table$p2)
     
 png(paste0(out_prefix, "_ldsc_rg.png"), 
     width = 10, 
