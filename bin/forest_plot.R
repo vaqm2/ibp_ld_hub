@@ -8,7 +8,7 @@ rG_table = read.table(args[1], header = T)
 out_prefix = args[2]
 
 rG_table = rG_table %>% 
-    select(p1, p2, rg, rg_low, rg_high, p) %>% 
+    select(p1, p2, rg, p) %>% 
     mutate(p_fdr = p.adjust(p, method = c("fdr"), n = nrow(rG_table))) %>%
     mutate(Significant = ifelse(p_fdr < 0.05, "Yes", "No"))
 
