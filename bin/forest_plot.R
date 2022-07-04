@@ -15,7 +15,7 @@ rG_table = rG_table %>%
 rG_table$p1 = gsub("\\..*$", "", rG_table$p1)
 rG_table$p2 = gsub("\\..*$", "", rG_table$p2)
     
-png(paste0(out_prefix, "_ldsc_rg.png"), 
+png(paste0(out_prefix, "_LDHub_rG.png"), 
     width = 10, 
     height = 12, 
     units = "in",
