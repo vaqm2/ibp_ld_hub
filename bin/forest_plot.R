@@ -25,7 +25,7 @@ ggplot(rG_table, aes(x = rg, y = p2, color = Significant)) +
     geom_point() + 
     geom_errorbarh(aes(xmin = rg - 1.96 * se, xmax = rg + 1.96 * se), 
                    height = 0.01) +
-    geom_text(aes(label = p_fdr)) +
+    geom_text(aes(label = p_fdr), nudge_y = 0.05) +
     geom_vline(xintercept = 0, lty = 2) +
     theme_bw() +
     scale_color_manual(values = c("blue", "red")) +
