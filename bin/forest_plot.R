@@ -4,8 +4,8 @@ require(ggplot2, quietly = TRUE)
 require(dplyr, quietly = TRUE)
 
 args = commandArgs(trailingOnly = TRUE)
-rG_table = read.table(args[0], header = T)
-out_prefix = args[1]
+rG_table = read.table(args[1], header = T)
+out_prefix = args[2]
 
 rG_table = rG_table %>% 
     select(p1, p2, rg, rg_low, rg_high, p) %>% 
